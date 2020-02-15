@@ -1,0 +1,21 @@
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Brush Script MT", cursive; 
+  font-size: 110px; 
+  font-style: normal; 
+  font-variant: normal; 
+  color: white;
+}
+
+.boxed {
+  width: 500px;
+  border: 2px solid gray;
+  margin-left: 10px ; 
+  padding: 10px 10px;
+  border-radius: 10px;
+}
