@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!-- JS -->   
@@ -21,31 +21,144 @@
   <!-- 구글폰트 -->
   <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 
-  <!-- style -->
-  <style type="text/css">
-
-  </style>
-
 </head>
 <body>
 
 
 
 
-
-  <div class="container">
-    <img src="https://images.unsplash.com/photo-1477173860144-6f21cf27086a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"  style="width:100%;">
-
+  <div>
+    <img class="mainimage" src="https://images.unsplash.com/photo-1477173860144-6f21cf27086a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" width="100%">
     <div class="centered">Travelling  in  Toronto</div>
   </div>
   <p></p>
-  <div class="boxed">
+  <div class="div-inline-block">
+    <div class="boxed div-inline-block">
+      <img src="https://lh5.googleusercontent.com/p/AF1QipN4oUE5uV-ZvKiIP0WvtvLy1u7mszLDrL0xSuXP=w408-h246-k-no" width="100%">
 
-    <h2>토론토</h2>
-    <h5>온타리오, 캐나다</h5>
+      <div class="info-text">
+        <h6></h6>
+        <h3>토론토</h3>
+        <h5>온타리오, 캐나다</h5>
+        <a href="https://www.seetorontonow.com/">토론토 관광청</a>
 
-    
 
+        <hr size="5" width="100%" align="left" color="lightgray">
+
+
+
+
+
+        <h5><strong>사진</strong></h5>
+
+        <img src="https://www.travelanddestinations.com/wp-content/uploads/2017/03/Casa-Loma-in-the-Spring.jpg" style="flex:0 1 140px;height:120px; border-radius:15px;">
+        <img src="https://www.travelanddestinations.com/wp-content/uploads/2017/03/Gooderham-Building-Flatiron.jpg" style="flex:0 1 150px;height:120px;border-radius:15px;">
+        <img src="https://www.travelanddestinations.com/wp-content/uploads/2017/03/Toronto-from-Ireland-Park.jpg" style="flex:0 1 150px;height:120px;border-radius:15px;">
+
+        <h6></h6>
+        <h5><strong>간략한 정보</strong></h5>
+        <h6 style="color:gray">온타리오 주의 수도인 토론토는 온타리오 호수의 북서쪽 해안을 따라 있는 캐나다에서 가장 큰 도시입니다. 도시 내에서는 각 지역마다 다양한 특색을 자랑하는데요. 수많은 인종들과 문화를 만날 수 있을 것이며, 그럼에도 불구하고 범죄율이 낮은 편입니다. 요크빌에는 독특한 물건을 파는 멋진 상점들이 즐비합니다. 올드 타운에는 세인트 로렌스 마켓이 있고, 이곳에서 맛있는 음식이나 공예품을 구입할 수 있습니다. 캐비지 타운에 가서 토론토 대학교 근처에 있는 네오 고딕 양식 건축물인 빅토리안 하우스를 둘러보세요. 토론토의 랜드마크로는 세계적으로 유명한 CN 타워와 아름다운 공원인 하이 파크, 배를 타고 조금만 가면 있는 토론토 아일랜드, 아이스하키 명예의 전당, 로열 온타리오 박물관 등을 꼽을 수 있습니다.</h6>
+        
+
+      </div>
+
+    </div>
   </div>
+
+
+
+
+
+  <div class="map-class">
+   <!--The div element for the map -->
+   <div id="map"></div>
+ </div>
+ <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var locations = [
+  ['hockeyhalloffame', 43.647284, -79.377682, 10],
+  ['stlawrencemarket', 43.648672, -79.371524, 9],
+  ['eatoncentre', 43.654415, -79.380703, 8],
+  ['amusementpark', 43.843196, -79.539441, 7],
+  ['zoo', 43.817885, -79.185912, 6], 
+  ['island', 43.616853, -79.374951, 5],
+  ['musuem', 43.667857, -79.394316, 4],
+  ['highpark', 43.646550, -79.463668, 3],
+  ['casaloma', 43.678045, -79.409444, 2],
+  ['cntower', 43.642770, -79.386983, 1]
+  ];
+  
+  // The map, centered at Uluru
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11.3,
+    center: new google.maps.LatLng(43.719307, -79.400352),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  // The marker, positioned at Uluru
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (i = 0; i < locations.length; i++) {  
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map
+    });
+  }
+}
+
+
+
+</script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+  -->
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmkOmOXNzcxK5R7euGKmfhLxweEUmXXK4&callback=initMap">
+</script>
+
+
+
+<h1></h1>
+<div  class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="https://lh5.googleusercontent.com/proxy/Aj2zwDSkcpG1udkOOQwCYVDuaElo8MZYa82MTOPMDVSHiY1QBN-EWhDMkSIvxZX8AzQhOyMcv7aIeuT7iNOG87Y8R3ZMH2cWjbLSXwZDrhNLfZj3cbOrhL6Tk2YyTDOBNMDuycaZmUZwP3mv7CcAMfGeBylKWAhm6XRFEaFo-Al9=w370-h253-n-k-no" alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">CN 타워</h3>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class="card-footer">
+      <a href="" class="btn btn-primary">Open</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://t1.gstatic.com/images?q=tbn:ANd9GcRhuB1oahOTOTYwnbWIDMsovaRWziyGmOXtv26QHSRssnRAsxQjYyLRDfseY20RgVn8c8uy3j3SC8YD-w"> 
+    <div class="card-body">
+      <h3 class="card-title">카사 로마</h3>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+    <div class="card-footer">
+      <a href="" class="btn btn-primary">Open</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://lh5.googleusercontent.com/proxy/wvPr87ivOF3qtZSWy66YTXnQ2jTQO3413_pCoSRbNtw46g6PX1Srn-Uqnj2hm0PIeAl0qMc-86SwKNe-gT2PyAJ1RXkpxAsnnwv0zMSa13xqoP0Nt9WPLRrAkwFtxJtvD6j3_HVzmp_rt5s58Ku0f3Bsdo3hAg=w370-h253-n-k-no" alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">하이 파크</h3>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+    <div class="card-footer">
+     <a href="" class="btn btn-primary">Open</a>
+   </div>
+ </div>
+</div>
+
+
 </body>
 </html>
