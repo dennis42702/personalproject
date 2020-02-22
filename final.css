@@ -6,22 +6,12 @@
 
 
 #map {
-  height: 700px;  /* The height is 400 pixels */
-  width: 100%; 
+  width: 100%
 
 }
-
-.map-class {
-  display: inline-block; /* The width is the width of the web page */
-  float: right;
-  width: 1000px;
-  /* margin-right: 5px ; */
-  height: 700px;
-}
-
 .centered {
   position: absolute;
-  top: 37%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Brush Script MT", cursive; 
